@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "yes-fm",
-    "slug": "yes-fm",
+    "name": "yes-fm-app",
+    "slug": "yes-fm-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
