@@ -1,9 +1,9 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text, Button } from 'react-native'
 import React, { useState } from 'react'
-import { Navigator } from 'expo-router';
 const BGImage = require('../assets/images/yesfmbackground.png');
 const IconImage = require('../assets/images/yesfm.png');
 const volumebutton = require('../assets/images/volume_up.png');
+const mutebutton = require('../assets/images/volume_mute.png');
 const arrow = require('../assets/images/arrow_forward.png');
 const facebook = require('../assets/images/facebook.png');
 const twitter = require('../assets/images/twitterx.png');
@@ -18,11 +18,14 @@ export default function home() {
 
     const router = useRouter();
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isMute, setIsMute] = useState(false);
 
     const togglePlayPause = () => {
         setIsPlaying(!isPlaying);
     };
-
+    const toggleMute = () => {
+        setIsMute(!isMute);
+    };
     return (
         <View style={styles.container}>
             <Image source={BGImage} style={styles.image} />
@@ -40,8 +43,8 @@ export default function home() {
             </View>
             <View style={styles.radiotxtCntainer}><Text style={styles.radiobuttonText}>101.1 Yes FM Manila</Text></View>
             <View style={styles.playbuttonContainer}>
-                <TouchableOpacity activeOpacity={0.9} style={styles.playButton1}>
-                    <Image source={volumebutton} style={styles.playButtonImage1} />
+                <TouchableOpacity activeOpacity={0.9} style={styles.playButton1} onPress={toggleMute}>
+                    <Image source={isMute ? mutebutton : volumebutton} style={styles.playButtonImage1} />
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.9} style={styles.playButton2}>
                     <Icon name={isPlaying ? "pause" : "play-arrow"} style={styles.playButtonImage2} size={60} color="#2F69B3" onPress={togglePlayPause} />
