@@ -2,7 +2,10 @@ import { View, Image, StyleSheet, TouchableOpacity, Text, Button } from 'react-n
 import React from 'react'
 import { Navigator } from 'expo-router';
 const BGImage = require('../assets/images/yesfmbackground.png');
-const IconImage = require('../assets/images/yesfm.png'); // Replace with the actual icon image path
+const IconImage = require('../assets/images/yesfm.png');
+const volumebutton = require('../assets/images/volume_up.png');
+const arrow = require('../assets/images/arrow_forward.png');
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function home() {
     return (
@@ -12,6 +15,7 @@ export default function home() {
                 <Image source={IconImage} style={styles.buttonImage} />
                 <TouchableOpacity style={styles.button} >
                     <Text style={styles.buttonText}>WATCH LIVE</Text>
+                    <Image source={arrow} style={styles.arrowbuttton} />
                 </TouchableOpacity>
             </View>
             <View style={styles.radioCntainer}>
@@ -21,16 +25,23 @@ export default function home() {
             </View>
             <View style={styles.radiotxtCntainer}><Text style={styles.radiobuttonText}>WATCH LIVE</Text></View>
             <View style={styles.playbuttonContainer}>
-                <TouchableOpacity style={styles.playButton}>
-                    <Image source={IconImage} style={styles.playButtonImage} />
+                <TouchableOpacity style={styles.playButton1}>
+                    <Image source={volumebutton} style={styles.playButtonImage1} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.playButton}>
-                    <Image source={IconImage} style={styles.playButtonImage} />
+                <TouchableOpacity style={styles.playButton2}>
+                    <Icon name="play-arrow" style={styles.playButtonImage2} size={60} color="#2F69B3" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.playButton}>
-                    <Image source={IconImage} style={styles.playButtonImage} />
+                <TouchableOpacity style={styles.playButton3}>
+                    <Icon name="share" style={styles.playButtonImage3} size={40} color="#2F69B3" />
                 </TouchableOpacity>
             </View>
+            <View style={styles.socialbuttonContainer}>
+                <Icon name="play-arrow" style={styles.playButtonImage2} size={20} color="#ffffff" />
+                <Icon name="play-arrow" style={styles.playButtonImage2} size={20} color="#ffffff" />
+                <Icon name="share" style={styles.playButtonImage3} size={20} color="#ffffff" />
+
+            </View>
+
         </View>
     );
 }
@@ -65,13 +76,11 @@ const styles = StyleSheet.create({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
+        justifyContent: 'space-evenly',
         borderRadius: 5,
-        borderColor: 'black',
+        borderColor: 'white',
         borderWidth: 1,
-        width: '50%',
+        width: '40%',
         height: '100%',
     },
     buttonImage: {
@@ -80,8 +89,8 @@ const styles = StyleSheet.create({
 
     },
     buttonText: {
-        fontSize: 18,
-        color: '#000',
+        fontSize: 14,
+        color: '#ffffff',
         fontFamily: 'Roboto',
     },
     radioCntainer: {
@@ -132,30 +141,74 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#ffffff',
         fontFamily: 'Roboto',
+        fontWeight: 'bold',
     },
     playbuttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        backgroundColor: 'red',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
         zIndex: 1,
         width: '100%',
         height: '15%',
         paddingLeft: 15,
         paddingRight: 15,
+        marginTop: 30
     },
-    playButton: {
-        flex: 1,
+    playButton1: {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffffff',
-        paddingVertical: 10,
+        borderRadius: 300,
+        height: '60%',
+        width: '21%',
+        borderColor: 'lightgray',
+        borderWidth: 5,
+
+    }, playButton2: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ffffff',
         borderRadius: 100,
-        marginHorizontal: 5,
+        height: '80%',
+        width: '28%',
+        borderColor: 'lightgray',
+        borderWidth: 5,
+
+    }, playButton3: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ffffff',
+        borderRadius: 100,
+        height: '60%',
+        width: '21%',
+        borderColor: 'lightgray',
+        borderWidth: 5,
     },
-    playButtonImage: {
-        width: 30,
-        height: 30,
+    playButtonImage1: {
+        width: 40,
+        height: 40,
+    }, playButtonImage2: {
+        width: 60,
+        height: 60,
+    }, playButtonImage3: {
+        width: 40,
+        height: 40,
     },
+    arrowbuttton: {
+        width: 25,
+        height: 20,
+    }, socialbuttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+
+        zIndex: 1,
+        width: '100%',
+        height: '5%',
+        paddingLeft: 15,
+        paddingRight: 15,
+        marginBottom: 10,
+        marginTop: 30
+    }
 });
 
 
