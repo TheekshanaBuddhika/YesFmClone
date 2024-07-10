@@ -5,6 +5,12 @@ const BGImage = require('../assets/images/yesfmbackground.png');
 const IconImage = require('../assets/images/yesfm.png');
 const volumebutton = require('../assets/images/volume_up.png');
 const arrow = require('../assets/images/arrow_forward.png');
+const facebook = require('../assets/images/facebook.png');
+const twitter = require('../assets/images/twitterx.png');
+const tiktok = require('../assets/images/tik-tok.png');
+const instagram = require('../assets/images/instagram.png');
+const youtube = require('../assets/images/youtube.png');
+const radio = require('../assets/images/radio.png');
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function home() {
@@ -36,12 +42,15 @@ export default function home() {
                 </TouchableOpacity>
             </View>
             <View style={styles.socialbuttonContainer}>
-                <Icon name="play-arrow" style={styles.playButtonImage2} size={20} color="#ffffff" />
-                <Icon name="play-arrow" style={styles.playButtonImage2} size={20} color="#ffffff" />
-                <Icon name="share" style={styles.playButtonImage3} size={20} color="#ffffff" />
-
+                <Image source={facebook} style={styles.socialImage} />
+                <Image source={twitter} style={styles.socialImage} />
+                <Image source={tiktok} style={styles.socialImage} />
+                <Image source={instagram} style={styles.socialImage} />
+                <Image source={youtube} style={styles.socialImage} />
             </View>
-
+            <TouchableOpacity style={styles.radiobutton}>
+                <Image source={radio} style={styles.radioButtonImage1} />
+            </TouchableOpacity>
         </View>
     );
 }
@@ -53,6 +62,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2F69B3',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        position: 'relative',
 
     },
     image: {
@@ -152,7 +162,7 @@ const styles = StyleSheet.create({
         height: '15%',
         paddingLeft: 15,
         paddingRight: 15,
-        marginTop: 30
+        marginTop: 50
     },
     playButton1: {
         justifyContent: 'center',
@@ -199,15 +209,42 @@ const styles = StyleSheet.create({
         height: 20,
     }, socialbuttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        borderRadius: 5,
         zIndex: 1,
-        width: '100%',
+        width: '60%',
         height: '5%',
-        paddingLeft: 15,
-        paddingRight: 15,
-        marginBottom: 10,
-        marginTop: 30
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        marginLeft: 15,
+        marginBottom: 15,
+        paddingTop: 10,
+        paddingBottom: 10,
+    },
+    socialImage: {
+        width: 30,
+        height: 30,
+    },
+    radiobutton: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        zIndex: 1,
+        height: '8%',
+        width: '17%',
+        borderRadius: 100,
+        backgroundColor: 'white',
+        position: 'absolute',
+        bottom: 100,
+        right: 0,
+        marginRight: 15,
+    },
+    radioButtonImage1: {
+        width: 30,
+        height: 30,
     }
 });
 
