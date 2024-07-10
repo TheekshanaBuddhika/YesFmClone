@@ -1,6 +1,5 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text, Button } from 'react-native'
 import React from 'react'
-import { Navigator } from 'expo-router';
 const BGImage = require('../assets/images/yesfmbackground.png');
 const IconImage = require('../assets/images/yesfm.png');
 const volumebutton = require('../assets/images/volume_up.png');
@@ -11,15 +10,16 @@ const tiktok = require('../assets/images/tik-tok.png');
 const instagram = require('../assets/images/instagram.png');
 const youtube = require('../assets/images/youtube.png');
 const ytbg = require('../assets/images/ytbg.png');
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useRouter } from 'expo-router';
 
 export default function youtubepage() {
+    const router = useRouter();
     return (
         <View style={styles.container}>
             <Image source={BGImage} style={styles.image} />
             <View style={styles.overlayContainer}>
                 <Image source={IconImage} style={styles.buttonImage} />
-                <TouchableOpacity activeOpacity={0.8} style={styles.button} >
+                <TouchableOpacity activeOpacity={0.8} style={styles.button} onPress={() => router.push('/home')}>
                     <Image source={arrow} style={styles.arrowbuttton} />
                     <Text style={styles.buttonText}>LISTEN LIVE</Text>
                 </TouchableOpacity>

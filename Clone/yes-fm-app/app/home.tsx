@@ -12,14 +12,19 @@ const instagram = require('../assets/images/instagram.png');
 const youtube = require('../assets/images/youtube.png');
 const radio = require('../assets/images/radio.png');
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useRouter } from 'expo-router';
 
 export default function home() {
+
+    const router = useRouter();
+
     return (
         <View style={styles.container}>
+
             <Image source={BGImage} style={styles.image} />
             <View style={styles.overlayContainer}>
                 <Image source={IconImage} style={styles.buttonImage} />
-                <TouchableOpacity activeOpacity={0.8} style={styles.button} >
+                <TouchableOpacity activeOpacity={0.8} style={styles.button} onPress={() => router.push('/youtubepage')}>
                     <Text style={styles.buttonText}>WATCH LIVE</Text>
                     <Image source={arrow} style={styles.arrowbuttton} />
                 </TouchableOpacity>
