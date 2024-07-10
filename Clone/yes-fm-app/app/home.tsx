@@ -1,5 +1,5 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text, Button } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Navigator } from 'expo-router';
 const BGImage = require('../assets/images/yesfmbackground.png');
 const IconImage = require('../assets/images/yesfm.png');
@@ -17,10 +17,14 @@ import { useRouter } from 'expo-router';
 export default function home() {
 
     const router = useRouter();
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const togglePlayPause = () => {
+        setIsPlaying(!isPlaying);
+    };
 
     return (
         <View style={styles.container}>
-
             <Image source={BGImage} style={styles.image} />
             <View style={styles.overlayContainer}>
                 <Image source={IconImage} style={styles.buttonImage} />
@@ -40,7 +44,7 @@ export default function home() {
                     <Image source={volumebutton} style={styles.playButtonImage1} />
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.9} style={styles.playButton2}>
-                    <Icon name="play-arrow" style={styles.playButtonImage2} size={60} color="#2F69B3" />
+                    <Icon name={isPlaying ? "pause" : "play-arrow"} style={styles.playButtonImage2} size={60} color="#2F69B3" onPress={togglePlayPause} />
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.9} style={styles.playButton3}>
                     <Icon name="share" style={styles.playButtonImage3} size={40} color="#2F69B3" />
