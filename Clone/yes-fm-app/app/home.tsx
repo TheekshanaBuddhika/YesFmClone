@@ -19,7 +19,7 @@ export default function home() {
             <Image source={BGImage} style={styles.image} />
             <View style={styles.overlayContainer}>
                 <Image source={IconImage} style={styles.buttonImage} />
-                <TouchableOpacity style={styles.button} >
+                <TouchableOpacity activeOpacity={0.8} style={styles.button} >
                     <Text style={styles.buttonText}>WATCH LIVE</Text>
                     <Image source={arrow} style={styles.arrowbuttton} />
                 </TouchableOpacity>
@@ -29,15 +29,15 @@ export default function home() {
                     <Image source={IconImage} style={styles.radiobuttonImage} />
                 </View>
             </View>
-            <View style={styles.radiotxtCntainer}><Text style={styles.radiobuttonText}>WATCH LIVE</Text></View>
+            <View style={styles.radiotxtCntainer}><Text style={styles.radiobuttonText}>101.1 Yes FM Manila</Text></View>
             <View style={styles.playbuttonContainer}>
-                <TouchableOpacity style={styles.playButton1}>
+                <TouchableOpacity activeOpacity={0.9} style={styles.playButton1}>
                     <Image source={volumebutton} style={styles.playButtonImage1} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.playButton2}>
+                <TouchableOpacity activeOpacity={0.9} style={styles.playButton2}>
                     <Icon name="play-arrow" style={styles.playButtonImage2} size={60} color="#2F69B3" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.playButton3}>
+                <TouchableOpacity activeOpacity={0.9} style={styles.playButton3}>
                     <Icon name="share" style={styles.playButtonImage3} size={40} color="#2F69B3" />
                 </TouchableOpacity>
             </View>
@@ -48,7 +48,7 @@ export default function home() {
                 <Image source={instagram} style={styles.socialImage} />
                 <Image source={youtube} style={styles.socialImage} />
             </View>
-            <TouchableOpacity style={styles.radiobutton}>
+            <TouchableOpacity activeOpacity={0.9} style={styles.radiobutton}>
                 <Image source={radio} style={styles.radioButtonImage1} />
             </TouchableOpacity>
         </View>
@@ -74,14 +74,14 @@ const styles = StyleSheet.create({
     overlayContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-
+        alignItems: 'center',
         zIndex: 1,
         width: '100%',
-        height: '5%',
+        height: '4%',
         paddingLeft: 15,
         paddingRight: 15,
         marginBottom: 10,
-        marginTop: 30
+        marginTop: 45
     },
     button: {
         flexDirection: 'row',
@@ -94,8 +94,8 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     buttonImage: {
-        height: '100%',
-        width: '15%',
+        height: '90%',
+        width: '11%',
 
     },
     buttonText: {
@@ -109,15 +109,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         zIndex: 1,
         width: '100%',
-        height: '35%',
+        height: '32%',
         marginBottom: 10,
         marginTop: 15,
         paddingLeft: 15,
         paddingRight: 15,
-    }, radiobuttonImage: {
+    },
+    radiobuttonImage: {
         width: '100%',
-        height: '95%',
-    }, radioimageCntainer: {
+        height: '100%',
+    },
+    radioimageCntainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -144,33 +146,33 @@ const styles = StyleSheet.create({
         height: '5%',
         paddingLeft: 15,
         paddingRight: 15,
-        marginTop: 15
+        marginTop: 0
 
     },
     radiobuttonText: {
-        fontSize: 20,
+        fontSize: 24,
         color: '#ffffff',
         fontFamily: 'Roboto',
         fontWeight: 'bold',
     },
     playbuttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
         alignItems: 'center',
         zIndex: 1,
         width: '100%',
         height: '15%',
         paddingLeft: 15,
         paddingRight: 15,
-        marginTop: 50
+        marginTop: 110
     },
     playButton1: {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffffff',
         borderRadius: 300,
-        height: '60%',
-        width: '21%',
+        height: '50%',
+        width: '18%',
         borderColor: 'lightgray',
         borderWidth: 5,
 
@@ -179,8 +181,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#ffffff',
         borderRadius: 100,
-        height: '80%',
-        width: '28%',
+        height: '65%',
+        width: '23%',
         borderColor: 'lightgray',
         borderWidth: 5,
 
@@ -189,8 +191,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#ffffff',
         borderRadius: 100,
-        height: '60%',
-        width: '21%',
+        height: '50%',
+        width: '18%',
         borderColor: 'lightgray',
         borderWidth: 5,
     },
@@ -205,9 +207,10 @@ const styles = StyleSheet.create({
         height: 40,
     },
     arrowbuttton: {
-        width: 25,
-        height: 20,
-    }, socialbuttonContainer: {
+        width: 18,
+        height: 15,
+    },
+    socialbuttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
@@ -225,26 +228,26 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     socialImage: {
-        width: 30,
-        height: 30,
+        width: 25,
+        height: 25,
     },
     radiobutton: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
         zIndex: 1,
-        height: '8%',
-        width: '17%',
+        height: '7%',
+        width: '15%',
         borderRadius: 100,
         backgroundColor: 'white',
         position: 'absolute',
-        bottom: 100,
+        bottom: 70,
         right: 0,
         marginRight: 15,
     },
     radioButtonImage1: {
-        width: 30,
-        height: 30,
+        width: 25,
+        height: 25,
     }
 });
 
